@@ -1,3 +1,4 @@
+use std::fmt;
 // Exercise 1
 // Fill in the blank and fix the errors
 // Make it compile
