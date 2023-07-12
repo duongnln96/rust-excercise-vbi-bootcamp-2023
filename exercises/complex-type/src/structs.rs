@@ -149,11 +149,11 @@ impl Package {
         }
     }
 
-    fn is_international(&self) -> &str {
+    fn is_international(&self) -> bool {
         if self.sender_country.eq(&self.recipient_country) {
-            "FALSE"
+            false
         } else {
-            "TRUE"
+            true
         }
     }
 
@@ -224,7 +224,7 @@ mod tests {
 
         let package = Package::new(sender_country, recipient_country, 1200);
 
-        assert_eq!(package.is_international(), "TRUE");
+        assert_eq!(package.is_international(), true);
     }
 
     // Test for exercise 6
@@ -235,7 +235,7 @@ mod tests {
 
         let package = Package::new(sender_country, recipient_country, 1200);
 
-        assert_eq!(package.is_international(), "FALSE");
+        assert_eq!(package.is_international(), false);
     }
     // Test for exercise 6
     #[test]
